@@ -14,14 +14,8 @@ namespace DataAccess.Abstract
     //Veritabanında yapacağım operasyonları içeren interface
     //Operasyon : Güncelle,Sil,Ekle, Filtrele vs. 
     //Bu interface'i concrete klasöründe iş yapan sınıf haline getireceğiz.
-    public interface IProductDal
+    public interface IProductDal:IEntityRepository<Product>
     {
-        //Product nesnemi liste şeklinde tümünü göster 
-        List<Product> GetAll();
-        void add(Product product);
-        void Delete(Product product);
-        void Update(Product product);
-
-        List<Product> GetAllByCategory(int categoryId);
+     
     }
 }
