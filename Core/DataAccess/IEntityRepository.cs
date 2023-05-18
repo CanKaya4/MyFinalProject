@@ -1,5 +1,4 @@
-﻿using Entities.Abstract;
-using Entities.Concrete;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +6,14 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstract
+namespace Core.DataAccess
 {
     //T'yi sınırlayacağız buna Generic Constraint denir : Generic Kısıt
     //T olarak Veritabanı nesnelerim gelmeli, Örn : Customer, Product veya Category
     // class yazmamızın sebebi ; referans tip olabilir şeklindedir.
     //IEntity : IEntity olabilir veya IEntitiy implemente eden class olabilir
     //new() : newlenebilir olmalı
-    public interface IEntityRepository<T> where T : class, IEntity,new()
+    public interface IEntityRepository<T> where T : class, IEntity,new() 
     {
         //IProductDal veya ICategorydal sınıflarını ve ileride de ekleyeceğim Employee, Customer vs gibi yapıları
         //Tek tek yazmak yerine bunun için generic bir interface oluşturdu,

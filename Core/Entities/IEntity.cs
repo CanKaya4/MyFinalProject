@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entities.Abstract
+namespace Core.Entities
 {
     //IEntity İmplement eden class, bir veritabanı tablosudur.
     //Bu class ile etiketlenen classlar bir veritabanı nesne demektir.

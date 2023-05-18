@@ -1,4 +1,4 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace Entities.Concrete
     //Çıplak Class Kalmasın
     //IEntity Abstract'ı ile işaretlenen class bir veritabanı tablosuna karşılık geldiği anlamını taşır
     public class Category:IEntity
-    {
+    { 
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
     }

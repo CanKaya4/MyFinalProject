@@ -1,4 +1,6 @@
-﻿using Entities.Concrete;
+﻿using Core.DataAccess;
+using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,7 @@ namespace DataAccess.Abstract
     //Bu interface'i concrete klasöründe iş yapan sınıf haline getireceğiz.
     public interface IProductDal:IEntityRepository<Product>
     {
+        List<ProductDetailDto> GetProductDetails();
      
     }
 }

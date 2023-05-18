@@ -1,16 +1,16 @@
 ﻿using Core.DataAccess;
+using Core.DataAccess.EntityFramework;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace DataAccess.Abstract
 {
-    public interface ICategoryDal:IEntityRepository<Category>
+    public interface IOrderDal : IEntityRepository<Order>
     {
-      
     }
 }
