@@ -18,7 +18,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             //Sql server'a yani databasemize nasıl bağlanacağını belirtiyoruz. 
             //Databasemiz Northwind
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Northwind;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=Northwind;Trusted_Connection=true");
         }
         // Hangi nesnemiz hangi nesneye karşılık geleceğini dolduracağız. Bunu da DbSet ile yapıyoruz.
         //DbSet içerisine bizim nesnemizi karşısına ise Veritabanı nesnesini yazıyoruz.
