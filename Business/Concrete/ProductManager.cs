@@ -29,7 +29,7 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
-            if (product.ProductName.Length>2)
+            if (product.ProductName.Length<2)
             {
                 return new ErrorResult(Messages.ProductNameInValid);
             }
@@ -44,7 +44,7 @@ namespace Business.Concrete
             //Eğer bunu yazarsan Business katmanı tamamen InMemory'e bağımlı olur ve gerçek bir veritabanına geçtiğinde tüm bu kodları değiştirmen gerekir.
             // Bir iş sınıfı başka sınıfları newlemez. Bunun yerine injection yapar Ör satır 13.
             // InMemoryProductDal ınMemoryProductDal = new InMemoryProductDal();
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 16)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
