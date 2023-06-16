@@ -10,6 +10,7 @@ namespace Core.Utilities.Interceptors
 {
     public class AspectInterceptorSelector : IInterceptorSelector
     {
+        //Bu interceptor aspect metholarının method,sınıf, ya da özellikler üzerinde etki edeğini belirtiyor
         public IInterceptor[] SelectInterceptors(Type type, MethodInfo method, IInterceptor[] interceptors)
         {
             var classAttributes = type.GetCustomAttributes<MethodInterceptionBaseAttribute>

@@ -31,24 +31,24 @@ namespace Business.Concrete
 
         //Bu bir constructor
         //ProductManager newlendiğinde bana bir tane IProductDal referansı ver.
-        public ProductManager(IProductDal productDal, ICategoryService categoryService )
+        public ProductManager(IProductDal productDal, ICategoryService categoryService)
         {
             _productDal = productDal;
             _categoryService = categoryService;
         }
-        [SecuredOperation("product.add,admin")]
+        //[SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-           IResult result =BusinessRules.Run(CheckIfProductCountOfCategoryCorrect(product.CategoryId), CannotAddProductWithSameName(product.ProductName),CheckIfCategoryLimitExceded());
-            if (result!=null)
+            IResult result = BusinessRules.Run(CheckIfProductCountOfCategoryCorrect(product.CategoryId), CannotAddProductWithSameName(product.ProductName), CheckIfCategoryLimitExceded());
+            if (result != null)
             {
                 return result;
             }
             _productDal.add(product);
             return new SuccessResult(Messages.ProductAdded);
-          
-          
+
+
         }
 
         public IDataResult<List<Product>> GetAll()
@@ -112,11 +112,11 @@ namespace Business.Concrete
             }
             return new SuccessResult();
         }
-       
+
         private IResult CheckIfCategoryLimitExceded()
         {
             var result = _categoryService.GetAll();
-            if (result.Data.Count>15)
+            if (result.Data.Count > 15)
             {
                 return new ErrorResult(Messages.CategoryLimitExceded);
             }
@@ -126,3 +126,4 @@ namespace Business.Concrete
 
 
 }
+
