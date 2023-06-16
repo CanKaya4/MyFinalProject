@@ -10,6 +10,8 @@ using Castle.DynamicProxy;
 using Microsoft.Extensions.DependencyInjection;
 using Business.Constants;
 using Core.Extensions;
+using Microsoft.Net.Http.Headers;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace Business.BusinessAspects.Autofac
 {
@@ -37,4 +39,5 @@ namespace Business.BusinessAspects.Autofac
             throw new Exception(Messages.AuthorizationDenied);
         }
     }
-}
+} 
+

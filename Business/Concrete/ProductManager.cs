@@ -36,11 +36,11 @@ namespace Business.Concrete
             _productDal = productDal;
             _categoryService = categoryService;
         }
-        //[SecuredOperation("product.add,admin")]
+        [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            IResult result = BusinessRules.Run(CheckIfProductCountOfCategoryCorrect(product.CategoryId), CannotAddProductWithSameName(product.ProductName), CheckIfCategoryLimitExceded());
+            IResult result = BusinessRules.Run(CheckIfProductCountOfCategoryCorrect(product.CategoryId), CannotAddProductWithSameName(product.ProductName));
             if (result != null)
             {
                 return result;
