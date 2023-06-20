@@ -38,7 +38,7 @@ namespace Business.Concrete
             _productDal = productDal;
             _categoryService = categoryService;
         }
-        [SecuredOperation("product.add,admin")]
+        //[SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         //[CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
@@ -61,7 +61,7 @@ namespace Business.Concrete
             //Eğer bunu yazarsan Business katmanı tamamen InMemory'e bağımlı olur ve gerçek bir veritabanına geçtiğinde tüm bu kodları değiştirmen gerekir.
             // Bir iş sınıfı başka sınıfları newlemez. Bunun yerine injection yapar Ör satır 13.
             // InMemoryProductDal ınMemoryProductDal = new InMemoryProductDal();
-            if (DateTime.Now.Hour == 16)
+            if (DateTime.Now.Hour == 1)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
